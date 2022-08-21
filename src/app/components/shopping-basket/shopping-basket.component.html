@@ -1,0 +1,6 @@
+<div class="items">
+    <app-shopping-item class="item" *ngFor="let item of items" [item]="item" (onRemove)="remove(item)">
+    </app-shopping-item>
+</div>
+<p>Total: {{sum() | currency:'GBP':'£'}}</p>
+<button (click)="openPayDialog()">Pay</button>

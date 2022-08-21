@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>Payment Details</h2>
+<mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Name on card</mat-label>
+        <input matInput [formControl]="card_number" required>
+        <mat-error *ngIf="card_number.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br>
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Card number</mat-label>
+        <input placeholder="XXXX-XXXX-XXXX-XXXX" matInput [formControl]="card_number" required>
+        <mat-error *ngIf=" card_number.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+
+        <mat-label>CVC</mat-label>
+        <input placeholder="XXX" matInput [formControl]="cvc" required>
+        <mat-error *ngIf="cvc.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Month/Year</mat-label>
+        <input placeholder="MM/YY" matInput [formControl]="month_year" required>
+        <mat-error *ngIf="month_year.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br>
+
+    <div>
+        <a>Value of basket {{ sum }}</a>
+    </div>
+
+</mat-dialog-content>
+
+<!-- <mat-dialog-actions>
+
+</mat-dialog-actions> -->

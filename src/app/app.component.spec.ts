@@ -1,11 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { UserhomeLayoutComponent } from './layouts/userhome-layout/userhome-layout.component';
+import { OrderScreenComponent } from './pages/order-screen/order-screen.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        UserhomeLayoutComponent,
+        OrderScreenComponent
       ],
     }).compileComponents();
   });
@@ -22,10 +26,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('interview-project');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('interview-project app is running!');
-  });
 });

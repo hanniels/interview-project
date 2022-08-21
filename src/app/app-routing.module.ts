@@ -7,7 +7,7 @@ import { UserhomeLayoutComponent } from './layouts/userhome-layout/userhome-layo
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "dashboard",
+    redirectTo: "order-screen",
     pathMatch: "full"
   },
   {
@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: "**",
-    redirectTo: "dashboard",
+    redirectTo: "order-screen",
   }
 ];
 
