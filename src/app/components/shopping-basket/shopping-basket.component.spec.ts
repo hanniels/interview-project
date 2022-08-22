@@ -29,7 +29,7 @@ describe('ShoppingBasketComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have 2 items after item removed', () => {
+  it('should have 2 items after item remove', () => {
     component.items.splice(1, 1)
     expect(component.items.length).toBe(2);
   });
