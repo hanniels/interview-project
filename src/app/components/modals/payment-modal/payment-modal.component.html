@@ -1,33 +1,36 @@
 <h2 mat-dialog-title>Payment Details</h2>
 <mat-dialog-content>
-    <mat-form-field appearance="fill">
-        <mat-label>Name on card</mat-label>
-        <input matInput [formControl]="card_number" required>
-        <mat-error *ngIf="card_number.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
-    <br>
+    <form [formGroup]="cardDetails">
+        <mat-form-field appearance="fill">
+            <mat-label>Name on card</mat-label>
+            <input matInput formControlName="card_name" required>
+            <mat-error *ngIf="cardDetails.controls['card_name'].invalid">{{getErrorMessage("card_name")}}
+            </mat-error>
+        </mat-form-field>
+        <br>
 
+        <mat-form-field appearance="fill">
+            <mat-label>Card number</mat-label>
+            <input placeholder="XXXX-XXXX-XXXX-XXXX" matInput formControlName="card_number" required>
+            <mat-error *ngIf="cardDetails.controls['card_number'].invalid">{{getErrorMessage("card_number")}}
+            </mat-error>
+        </mat-form-field>
 
-    <mat-form-field appearance="fill">
-        <mat-label>Card number</mat-label>
-        <input placeholder="XXXX-XXXX-XXXX-XXXX" matInput [formControl]="card_number" required>
-        <mat-error *ngIf=" card_number.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>CVC</mat-label>
+            <input placeholder="XXX" matInput formControlName="cvc" required>
+            <mat-error *ngIf="cardDetails.controls['cvc'].invalid">{{getErrorMessage("cvc")}}
+            </mat-error>
+        </mat-form-field>
+        <br>
 
-
-    <mat-form-field appearance="fill">
-
-        <mat-label>CVC</mat-label>
-        <input placeholder="XXX" matInput [formControl]="cvc" required>
-        <mat-error *ngIf="cvc.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
-    <br>
-
-    <mat-form-field appearance="fill">
-        <mat-label>Month/Year</mat-label>
-        <input placeholder="MM/YY" matInput [formControl]="month_year" required>
-        <mat-error *ngIf="month_year.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Month/Year</mat-label>
+            <input placeholder="MM/YY" matInput formControlName="month_year" required>
+            <mat-error *ngIf="cardDetails.controls['month_year'].invalid">{{getErrorMessage("month_year")}}
+            </mat-error>
+        </mat-form-field>
+    </form>
     <br>
 
     <div>
